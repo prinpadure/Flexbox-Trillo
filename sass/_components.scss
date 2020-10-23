@@ -11,6 +11,12 @@
     align-items: center;
     justify-content: center;
 
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+    }
+
     &__input {
         flex-basis: 90%;
         font-family: inherit;
@@ -59,7 +65,6 @@
 .user-nav {
     align-self: stretch;
     display: flex;
-    align-items: stretch;
 
     & > * {
         padding: 0 2rem;
@@ -108,9 +113,18 @@
     font-size: 1.4rem;
     list-style: none;
     margin-top: 3.5rem;
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin: 0;
+    }
 
     &__item {
         position: relative;
+
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+        }
+
         &::before {
             content: "";
             position: absolute;
@@ -146,6 +160,14 @@
             padding: 1.5rem 3rem;
             position: relative;
             z-index: 10;
+            @media only screen and (max-width: $bp-medium) {
+                justify-content: center;
+                padding: 2rem;
+            }
+            @media only screen and (max-width: $bp-small) {
+                flex-direction: column;
+                padding: 1.5rem 0;
+            }
         }
     }
 
@@ -154,6 +176,12 @@
         height: 1.75rem;
         margin-right: 2rem;
         fill: currentColor;
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0;
+            margin-bottom: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
 }
 
@@ -162,6 +190,9 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 .gallery {
@@ -183,6 +214,10 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+        @media only screen and (max-width: $bp-largest) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
     &__stars {
         margin-right: auto;
@@ -211,16 +246,25 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @media only screen and (max-width: $bp-largest) {
+            padding: 0 1.5rem;
+        }
     }
     &__rating-average {
         font-size: 2.25rem;
         font-weight: 300;
-        // margin-bottom: -3px;
+        @media only screen and (max-width: $bp-largest) {
+            font-size: 1.8rem;
+        }
     }
 
     &__rating-count {
         font-size: 0.8rem;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $bp-largest) {
+            font-size: 0.5rem;
+        }
     }
 }
 
@@ -317,6 +361,7 @@
     &__count {
     }
     &__friends {
+        display: flex;
     }
 
     &__photo {
@@ -327,7 +372,7 @@
         border: 3px solid white;
 
         &:not(:last-child) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 }
@@ -339,6 +384,11 @@
     margin-bottom: 3.5rem;
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
 
     &__text {
         margin-bottom: 2rem;
@@ -388,6 +438,10 @@
 .cta {
     padding: 3.5rem 0;
     text-align: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+    }
 
     &__book-now {
         font-size: 2rem;
